@@ -4,10 +4,6 @@ import com.piyushcodes.airBnb.entity.enums.Gender;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.time.LocalDateTime;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -25,16 +21,8 @@ public class Guest {
     @Column(nullable = false)
     private String name;
 
-//    @CreationTimestamp
-//    private LocalDateTime timeStamp;
-
-    private Integer age;
-
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-
-    @ManyToMany(mappedBy = "guests")
-    private Set<Booking> bookings;
-
+    private Integer age;
 }

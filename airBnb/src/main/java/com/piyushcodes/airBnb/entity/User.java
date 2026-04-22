@@ -8,9 +8,9 @@ import lombok.Setter;
 
 import java.util.Set;
 
+@Entity
 @Getter
 @Setter
-@Entity
 @Table(name = "app_user")
 public class User {
 
@@ -18,7 +18,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Column(nullable = false)
@@ -28,8 +28,5 @@ public class User {
 
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
-    private Set<Role> role;
-
-
-
+    private Set<Role> roles;
 }

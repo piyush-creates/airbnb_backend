@@ -14,5 +14,4 @@ public interface RoomService {
 
     void deleteRoomById(Long roomId);
 
-
 }

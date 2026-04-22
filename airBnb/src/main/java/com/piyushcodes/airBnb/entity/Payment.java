@@ -27,7 +27,7 @@ public class Payment {
     private PaymentStatus paymentStatus;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal price;
+    private BigDecimal amount;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -35,4 +35,6 @@ public class Payment {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    private Booking booking;
 }
