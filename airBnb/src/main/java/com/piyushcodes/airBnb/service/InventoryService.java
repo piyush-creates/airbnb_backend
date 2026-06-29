@@ -1,10 +1,11 @@
 package com.piyushcodes.airBnb.service;
 
-import com.piyushcodes.airBnb.dto.HotelDto;
-import com.piyushcodes.airBnb.dto.HotelPriceDto;
-import com.piyushcodes.airBnb.dto.HotelSearchRequest;
+import com.piyushcodes.airBnb.dto.*;
 import com.piyushcodes.airBnb.entity.Room;
+import org.jspecify.annotations.Nullable;
 import org.springframework.data.domain.Page;
+
+import java.util.List;
 
 public interface InventoryService {
 
@@ -13,4 +14,8 @@ public interface InventoryService {
     void deleteAllInventories(Room room);
 
     Page<HotelPriceDto> searchHotels(HotelSearchRequest hotelSearchRequest);
+
+    List<InventoryDto> getAllInventoryByRoom(Long roomId);
+
+    void updateInventory(Long roomId, UpdateInventoryRequestDto updateInventoryRequestDto);
 }

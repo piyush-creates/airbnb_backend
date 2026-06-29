@@ -31,5 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
-.env
-airBnb/.env
+
+# Spring Boot
+src/main/resources/application.properties
